@@ -166,24 +166,87 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
 </div>
 
 <script>
-var CODIGO_COHORTE = 'FORJA15';
+// ============================================================
+// Gate por código personal (backend n8n vía /api/codigo).
+// API_ACTIVA=false → modo legado (código de cohorte fijo).
+// Al activar el workflow de n8n + proxy nginx: poner true.
+// ============================================================
+var API_ACTIVA = false;
+var CODIGO_LEGADO = 'FORJA15';
+
 function mostrarContenido() {
   document.getElementById('gate').style.display = 'none';
   document.getElementById('contenido').style.display = 'block';
 }
+function mostrarError(msg) {
+  var err = document.getElementById('err');
+  err.textContent = msg;
+  err.style.display = 'block';
+}
+function guardarAcceso(codigo, token) {
+  try {
+    localStorage.setItem('taller_codigo', codigo);
+    if (token) localStorage.setItem('taller_token', token);
+  } catch (e) {}
+}
+
+function canjear(codigo, token, esSilencioso) {
+  var body = { codigo: codigo };
+  if (token) body.token = token;
+  fetch('/api/codigo', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  })
+  .then(function (r) { return r.json(); })
+  .then(function (d) {
+    if (d && d.ok) {
+      guardarAcceso(codigo, d.token || token);
+      mostrarContenido();
+    } else if (!esSilencioso) {
+      if (d && d.reason === 'usado') {
+        mostrarError('Este código ya fue activado en otro dispositivo. Escríbenos por WhatsApp y lo resolvemos en un minuto.');
+      } else {
+        mostrarError('Código incorrecto. Revisa el mensaje de WhatsApp que te enviamos.');
+      }
+    }
+  })
+  .catch(function () {
+    if (!esSilencioso) {
+      mostrarError('No pudimos validar tu código en este momento. Intenta en unos minutos o escríbenos por WhatsApp.');
+    }
+  });
+}
+
 function verificarCodigo() {
   var v = (document.getElementById('codigo').value || '').trim().toUpperCase();
-  if (v === CODIGO_COHORTE) {
-    try { sessionStorage.setItem('taller_ob', '1'); } catch (e) {}
-    mostrarContenido();
+  if (!v) return;
+  if (API_ACTIVA) {
+    canjear(v, null, false);
   } else {
-    document.getElementById('err').style.display = 'block';
+    if (v === CODIGO_LEGADO) {
+      try { sessionStorage.setItem('taller_ob', '1'); } catch (e) {}
+      mostrarContenido();
+    } else {
+      mostrarError('Código incorrecto. Revisa el mensaje de WhatsApp que te enviamos.');
+    }
   }
 }
+
 document.getElementById('codigo').addEventListener('keydown', function (e) {
   if (e.key === 'Enter') verificarCodigo();
 });
-try { if (sessionStorage.getItem('taller_ob') === '1') mostrarContenido(); } catch (e) {}
+
+// Reingreso automático
+try {
+  if (API_ACTIVA) {
+    var c = localStorage.getItem('taller_codigo');
+    var t = localStorage.getItem('taller_token');
+    if (c) canjear(c, t, true);
+  } else if (sessionStorage.getItem('taller_ob') === '1') {
+    mostrarContenido();
+  }
+} catch (e) {}
 </script>
 </body>
 </html>
