@@ -78,6 +78,10 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
 .trust { margin-top:26px; display:flex; flex-wrap:wrap; gap:8px 22px; font-size:.82rem; color:var(--text-muted); }
 .trust span { display:flex; align-items:center; gap:7px; }
 
+/* ---------- IMG BAND ---------- */
+.img-band { border-radius:20px; overflow:hidden; border:1px solid var(--border); box-shadow:0 20px 50px rgba(2,6,23,.45); }
+.img-band img { display:block; width:100%; height:clamp(210px,38vw,430px); object-fit:cover; }
+
 /* ---------- BOTONES ---------- */
 .btn-wa {
   display:inline-flex; align-items:center; gap:12px; background:var(--green-wa); color:#fff;
@@ -178,7 +182,6 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <header class="hero">
   <div class="hero-bg"><img src="assets/hero.webp" alt=""></div>
   <div class="wrap">
-    <span class="eyebrow">Taller presencial · Metepec</span>
     <h1>Construye tu <span class="grad">Operador de IA</span> en una mañana</h1>
     <p class="hero-sub">No es teoría. Traes tu laptop y te vas con tu propia automatización de IA <b>funcionando</b> — para tu negocio o para venderla como servicio.</p>
     <div class="hero-meta">
@@ -202,17 +205,20 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <!-- ============ PROMESA / CONTRASTE ============ -->
 <section class="section">
   <div class="wrap reveal">
-    <span class="eyebrow">Por qué este taller es distinto</span>
     <h2 class="section-title">La mayoría de los cursos de IA te dejan igual que llegaste.</h2>
     <p class="lead">Te enseñan a "prompsear", te vas con apuntes y a los tres días se te olvidó. Aquí es al revés: <b style="color:var(--text)">pasas la mañana construyendo</b>, y te vas con una herramienta que trabaja para ti — la usas el lunes o se la cobras a un cliente.</p>
   </div>
+</section>
+
+<!-- banda imagen: sala colaborativa -->
+<section class="section" style="padding:8px 0 48px;">
+  <div class="wrap reveal"><div class="img-band"><img src="assets/room.webp" alt="Taller presencial: grupo construyendo con laptops en Metepec" loading="lazy"></div></div>
 </section>
 
 <!-- ============ LO QUE CONSTRUYES ============ -->
 <section class="section" style="padding-top:0;">
   <div class="wrap">
     <div class="reveal" style="margin-bottom:36px;">
-      <span class="eyebrow">Lo que vas a construir en vivo</span>
       <h2 class="section-title">Tu Operador de IA, paso a paso</h2>
     </div>
     <div class="grid g3 reveal">
@@ -236,11 +242,15 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
   </div>
 </section>
 
+<!-- banda imagen: construyendo en vivo -->
+<section class="section" style="padding:8px 0 48px;">
+  <div class="wrap reveal"><div class="img-band"><img src="assets/build.webp" alt="Construyendo en vivo con Claude Code: terminal y código" loading="lazy"></div></div>
+</section>
+
 <!-- ============ TE LLEVAS ============ -->
 <section class="section" style="padding-top:0;">
   <div class="wrap reveal">
     <div class="panel">
-      <span class="eyebrow">Te llevas a casa</span>
       <h2 class="section-title" style="margin-bottom:26px;">Un activo, no apuntes</h2>
       <ul class="check-list">
         <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Tu Operador de IA funcionando</b> en tu propia laptop — reutilizable, tuyo, listo para trabajar.</span></li>
@@ -254,7 +264,6 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <!-- ============ DIFERENCIADOR: PRE-SETUP ============ -->
 <section class="section" style="padding-top:0;">
   <div class="wrap reveal">
-    <span class="eyebrow">El taller empieza antes del sábado</span>
     <h2 class="section-title">Llegas a construir, no a instalar</h2>
     <p class="lead">Al inscribirte te acompañamos a dejar tu computadora lista con una <b style="color:var(--text)">sesión de setup guiada</b>. Nada de perder la primera hora peleando con instalaciones ni "se me trabó la compu". El día del taller abres tu laptop y arrancas a construir de inmediato. <b style="color:var(--text)">De eso casi nadie se hace cargo — nosotros sí.</b></p>
   </div>
@@ -264,7 +273,6 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <section class="section" style="padding-top:0;">
   <div class="wrap">
     <div class="reveal" style="margin-bottom:30px;">
-      <span class="eyebrow">Para quién es</span>
       <h2 class="section-title">Si te suena alguno de estos, es para ti</h2>
     </div>
     <div class="grid g3 reveal">
@@ -279,7 +287,6 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <section class="section" style="padding-top:0;">
   <div class="wrap reveal">
     <div class="panel">
-      <span class="eyebrow">Los datos del taller</span>
       <h2 class="section-title" style="margin-bottom:26px;">Logística</h2>
       <dl class="logi">
         <dt>Fecha</dt><dd><b>Sábado 15 de agosto de 2026</b> · 9:00 a 12:00 h</dd>
@@ -296,7 +303,6 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <section class="section" style="padding-top:0;">
   <div class="wrap reveal">
     <div class="price-card">
-      <span class="eyebrow" style="padding-left:0;">Inversión</span>
       <div><span class="price-anchor">Precio estándar $2,490</span></div>
       <div class="price-big">$1,290 <span>MXN</span></div>
       <div style="color:var(--text-muted); font-size:.9rem;">Precio fundador · primera cohorte</div>
@@ -314,7 +320,6 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <!-- ============ FAQ ============ -->
 <section class="section" style="padding-top:0;">
   <div class="wrap reveal">
-    <span class="eyebrow">Dudas frecuentes</span>
     <h2 class="section-title" style="margin-bottom:26px;">Antes de apartar tu lugar</h2>
     <details><summary>¿Necesito saber programar?</summary><div class="a">No. Claude Code hace el trabajo pesado; tú diriges. El pre-setup deja tu compu lista y el grupo es reducido para que nadie se quede atrás. Si nunca has tocado la terminal, este taller está diseñado para ti.</div></details>
     <details><summary>¿Qué necesito traer?</summary><div class="a">Tu laptop (Windows o Mac) cargada. Nada más. Antes del taller te guiamos para dejarla lista en una sesión de setup.</div></details>
