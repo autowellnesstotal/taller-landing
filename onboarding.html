@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Portal de onboarding del Taller Construye tu Operador de IA.">
+<title>Onboarding — Taller Operador de IA</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --cyan:#22D3EE; --cyan-soft:#67E8F9;
+  --bg-dark:#0F172A; --bg-deeper:#020617; --surface:#1E293B; --surface-2:#172033;
+  --border:#334155; --text:#F1F5F9; --text-sec:#CBD5E1; --text-muted:#94A3B8;
+  --text-dim:#475569; --green-wa:#25D366;
+  --serif:'Outfit',system-ui,sans-serif; --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+html { scroll-behavior:smooth; }
+body { font-family:var(--sans); background:var(--bg-dark); color:var(--text); line-height:1.65; -webkit-font-smoothing:antialiased; }
+.wrap { max-width:860px; margin:0 auto; padding:0 24px; }
+h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.15; letter-spacing:-.02em; }
+
+/* GATE */
+#gate { position:fixed; inset:0; background:var(--bg-deeper); display:flex; align-items:center; justify-content:center; z-index:50; padding:24px; }
+.gate-box { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:44px 36px; max-width:420px; width:100%; text-align:center; }
+.gate-box h1 { font-size:1.5rem; margin:14px 0 8px; }
+.gate-box p { color:var(--text-muted); font-size:.95rem; margin-bottom:24px; }
+.gate-box input { width:100%; padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--bg-dark); color:var(--text); font-family:var(--mono); font-size:1.1rem; text-align:center; letter-spacing:.2em; text-transform:uppercase; outline:none; }
+.gate-box input:focus { border-color:var(--cyan); }
+.gate-box button { margin-top:14px; width:100%; padding:14px; border:none; border-radius:12px; background:var(--cyan); color:var(--bg-deeper); font-weight:700; font-size:1rem; cursor:pointer; font-family:var(--sans); }
+.gate-box button:hover { background:var(--cyan-soft); }
+.gate-err { color:#F87171; font-size:.85rem; margin-top:12px; display:none; }
+.gate-help { margin-top:20px; font-size:.8rem; color:var(--text-dim); }
+.gate-help a { color:var(--cyan); }
+
+/* CONTENIDO */
+#contenido { display:none; }
+header.top { padding:64px 0 36px; border-bottom:1px solid var(--border); background:linear-gradient(180deg,var(--bg-deeper),var(--bg-dark)); }
+header.top h1 { font-size:clamp(1.7rem,4.5vw,2.4rem); margin-bottom:10px; }
+header.top p { color:var(--text-sec); max-width:600px; }
+.chip { display:inline-block; font-family:var(--mono); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(34,211,238,.35); border-radius:999px; padding:6px 14px; margin-bottom:16px; }
+.paso { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:32px 28px; margin:26px 0; }
+.paso .num { font-family:var(--mono); color:var(--cyan); font-size:.85rem; margin-bottom:10px; }
+.paso h2 { font-size:1.35rem; margin-bottom:14px; }
+.paso p, .paso li { color:var(--text-sec); font-size:.97rem; }
+.paso ol, .paso ul { padding-left:22px; margin:12px 0; display:grid; gap:8px; }
+.paso code { font-family:var(--mono); font-size:.88em; background:var(--bg-deeper); border:1px solid var(--border); border-radius:6px; padding:2px 8px; color:var(--cyan-soft); }
+.cmd { display:block; background:var(--bg-deeper); border:1px solid var(--border); border-radius:10px; padding:14px 16px; font-family:var(--mono); font-size:.9rem; color:var(--cyan-soft); margin:10px 0; overflow-x:auto; white-space:nowrap; }
+.btn-dl { display:inline-flex; align-items:center; gap:9px; background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.35); color:var(--cyan-soft); font-weight:600; font-size:.92rem; padding:12px 20px; border-radius:12px; text-decoration:none; margin:6px 10px 6px 0; }
+.btn-dl:hover { background:rgba(34,211,238,.18); }
+.btn-wa { display:inline-flex; align-items:center; gap:10px; background:var(--green-wa); color:#fff; font-weight:700; font-size:.95rem; padding:13px 22px; border-radius:12px; text-decoration:none; }
+.nota { background:rgba(34,211,238,.06); border:1px solid rgba(34,211,238,.2); border-radius:12px; padding:16px 18px; font-size:.9rem; color:var(--text-sec); margin-top:14px; }
+.nota b { color:var(--cyan-soft); }
+table.req { width:100%; border-collapse:collapse; margin:14px 0; font-size:.92rem; }
+table.req td { padding:9px 12px; border-bottom:1px solid var(--border); color:var(--text-sec); }
+table.req td:first-child { color:var(--text-muted); width:45%; }
+.os-tag { font-family:var(--mono); font-size:.72rem; color:var(--cyan); text-transform:uppercase; letter-spacing:.12em; display:block; margin:16px 0 6px; }
+footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48px; text-align:center; color:var(--text-dim); font-size:.8rem; }
+@media (max-width:640px){ .paso{padding:24px 18px;} }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+
+<!-- ===== GATE ===== -->
+<div id="gate">
+  <div class="gate-box">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <h1>Portal de onboarding</h1>
+    <p>Escribe el código de acceso que recibiste por WhatsApp al confirmar tu lugar.</p>
+    <input id="codigo" type="text" maxlength="12" placeholder="CÓDIGO" autocomplete="off">
+    <button onclick="verificarCodigo()">Entrar</button>
+    <div class="gate-err" id="err">Código incorrecto. Revisa el mensaje de WhatsApp que te enviamos.</div>
+    <div class="gate-help">¿No tienes código? <a href="https://wa.me/5215548407552?text=TALLER">Escríbenos por WhatsApp</a></div>
+  </div>
+</div>
+
+<!-- ===== CONTENIDO ===== -->
+<div id="contenido">
+<header class="top">
+  <div class="wrap">
+    <span class="chip">Taller · Sábado 15 de agosto · Metepec</span>
+    <h1>Deja tu laptop lista antes del taller</h1>
+    <p>Son 4 pasos y toman entre 20 y 40 minutos. Si te atoras en cualquiera, nos escribes por WhatsApp y lo resolvemos juntos — para eso estamos. El martes 11 de agosto además hay una sesión grupal por Meet para terminar el setup acompañado.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="paso">
+    <div class="num">PASO 1 DE 4</div>
+    <h2>Verifica que tu equipo cumple</h2>
+    <table class="req">
+      <tr><td>Sistema operativo</td><td>Windows 10/11 o macOS 12 en adelante</td></tr>
+      <tr><td>Memoria RAM</td><td>8 GB recomendado (4 GB mínimo, va más lento)</td></tr>
+      <tr><td>Espacio libre en disco</td><td>2 GB o más</td></tr>
+      <tr><td>Permisos</td><td>Poder instalar programas (tu usuario o el admin)</td></tr>
+      <tr><td>Internet</td><td>WiFi funcional (en el taller hay red)</td></tr>
+    </table>
+    <p>Descarga el verificador para tu sistema y córrelo — te dice en 10 segundos cómo está tu equipo:</p>
+    <p style="margin-top:10px;">
+      <a class="btn-dl" href="descargas/verifica.bat" download>⬇ Verificador para Windows</a>
+      <a class="btn-dl" href="descargas/verifica.command" download>⬇ Verificador para Mac</a>
+    </p>
+    <ul>
+      <li><b style="color:var(--text)">Windows:</b> doble clic en <code>verifica.bat</code>. Si Windows pregunta, elige "Ejecutar de todas formas".</li>
+      <li><b style="color:var(--text)">Mac:</b> abre la app <b>Terminal</b>, escribe <code>bash</code>, un espacio, arrastra el archivo <code>verifica.command</code> a la ventana y presiona Enter.</li>
+    </ul>
+    <div class="nota"><b>¿Tu equipo no cumple o el verificador marca algo raro?</b> Mándanos la captura por WhatsApp: la revisión y el diagnóstico son <b>gratis</b>. Si tu equipo necesita una actualización (memoria, espacio, sistema), te cotizamos la opción más económica para que llegues listo — o te prestamos equipo el día del taller (avísanos con tiempo, hay pocos).</div>
+  </div>
+
+  <div class="paso">
+    <div class="num">PASO 2 DE 4</div>
+    <h2>Instala Node y Claude Code</h2>
+    <span class="os-tag">Windows</span>
+    <ol>
+      <li>Descarga Node.js (versión LTS) desde <a href="https://nodejs.org/es" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">nodejs.org/es</a> e instálalo con todo en "Siguiente".</li>
+      <li>Cierra y vuelve a abrir cualquier ventana negra (terminal) que tuvieras abierta.</li>
+      <li>Abre una terminal nueva: presiona <code>Windows + R</code>, escribe <code>cmd</code>, Enter.</li>
+      <li>Pega este comando y presiona Enter (tarda 1-3 minutos):</li>
+    </ol>
+    <span class="cmd">npm install -g @anthropic-ai/claude-code</span>
+    <span class="os-tag">Mac</span>
+    <ol>
+      <li>Descarga Node.js (versión LTS) desde <a href="https://nodejs.org/es" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">nodejs.org/es</a> e instálalo.</li>
+      <li>Abre la app <b>Terminal</b> (Spotlight → escribe "Terminal").</li>
+      <li>Pega este comando y presiona Enter:</li>
+    </ol>
+    <span class="cmd">npm install -g @anthropic-ai/claude-code</span>
+    <div class="nota"><b>Nota:</b> no necesitas crear cuenta ni iniciar sesión todavía. El día del taller te damos tu llave de acceso — solo necesitamos que el programa quede instalado.</div>
+  </div>
+
+  <div class="paso">
+    <div class="num">PASO 3 DE 4</div>
+    <h2>Descarga tu Operador de IA</h2>
+    <p>Este ZIP es la carpeta que vamos a convertir en tu producto durante el taller:</p>
+    <p style="margin-top:10px;"><a class="btn-dl" href="descargas/mi-operador-ia.zip" download>⬇ Descargar mi-operador-ia.zip</a></p>
+    <ol>
+      <li>Descomprímelo: clic derecho → "Extraer todo" (Windows) o doble clic (Mac).</li>
+      <li>Mueve la carpeta <code>mi-operador-ia</code> a <b>Documentos</b>.</li>
+      <li>Ábrela y lee el archivo <code>LEEME.txt</code> — explica qué es cada cosa.</li>
+    </ol>
+  </div>
+
+  <div class="paso">
+    <div class="num">PASO 4 DE 4</div>
+    <h2>Tu semáforo verde</h2>
+    <p>Vuelve a correr el verificador del paso 1. Ahora los 5 puntos deben decir <b style="color:#34D399;">OK</b> (incluidos Node y Claude Code).</p>
+    <ol>
+      <li>Tómale captura (o foto) a la ventana con todo en OK.</li>
+      <li>Mándala por WhatsApp — con eso quedas confirmado como 🟢 y el sábado entras directo a construir.</li>
+    </ol>
+    <p style="margin-top:14px;"><a class="btn-wa" href="https://wa.me/5215548407552?text=Semáforo%20del%20taller%20✅">Enviar mi captura por WhatsApp</a></p>
+    <div class="nota"><b>¿Algo no salió OK?</b> Mándanos esa captura igual. Lo resolvemos por WhatsApp o en la <b>sesión grupal del martes 11 de agosto por Meet</b> (te llega el link por WhatsApp). Nadie llega el sábado con la laptop a medias.</div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Wellness Total · Taller "Construye tu Operador de IA" · <a href="https://wa.me/5215548407552" style="color:var(--text-dim);">WhatsApp de soporte</a></div>
+</footer>
+</div>
+
+<script>
+var CODIGO_COHORTE = 'FORJA15';
+function mostrarContenido() {
+  document.getElementById('gate').style.display = 'none';
+  document.getElementById('contenido').style.display = 'block';
+}
+function verificarCodigo() {
+  var v = (document.getElementById('codigo').value || '').trim().toUpperCase();
+  if (v === CODIGO_COHORTE) {
+    try { sessionStorage.setItem('taller_ob', '1'); } catch (e) {}
+    mostrarContenido();
+  } else {
+    document.getElementById('err').style.display = 'block';
+  }
+}
+document.getElementById('codigo').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') verificarCodigo();
+});
+try { if (sessionStorage.getItem('taller_ob') === '1') mostrarContenido(); } catch (e) {}
+</script>
+</body>
+</html>
