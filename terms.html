@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Términos de Uso — Wellness Total</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"></noscript>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cyan:       #22D3EE;
+  --bg-dark:    #0F172A;
+  --bg-deeper:  #020617;
+  --surface:    #1E293B;
+  --border:     #334155;
+  --text:       #F1F5F9;
+  --text-sec:   #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-dim:   #475569;
+  --serif:      'Outfit', system-ui, sans-serif;
+  --sans:       'Plus Jakarta Sans', system-ui, sans-serif;
+  --mono:       'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg-dark);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 64px;
+  background: rgba(15,23,42,0.95);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+.nav-logo span { color: var(--cyan); }
+.nav-back {
+  font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--cyan); }
+main {
+  max-width: 720px; margin: 0 auto;
+  padding: 64px 5vw 100px;
+}
+.page-eyebrow {
+  font-family: var(--mono); font-size: 0.68rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.page-eyebrow::before {
+  content: ''; width: 24px; height: 1.5px;
+  background: var(--cyan); display: inline-block; flex-shrink: 0;
+}
+h1 {
+  font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
+  color: var(--text); margin-bottom: 12px;
+}
+.updated {
+  font-size: 0.8rem; color: var(--text-dim);
+  font-family: var(--mono); margin-bottom: 48px;
+}
+.doc-body { display: flex; flex-direction: column; gap: 36px; }
+.doc-section {}
+.doc-section h2 {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 700;
+  color: var(--text); margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.doc-section p { color: var(--text-muted); margin-bottom: 10px; font-size: 0.95rem; }
+.doc-section p:last-child { margin-bottom: 0; }
+.doc-section ul {
+  list-style: none; padding: 0;
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: 8px;
+}
+.doc-section ul li {
+  color: var(--text-muted); font-size: 0.95rem;
+  padding-left: 16px; position: relative;
+}
+.doc-section ul li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--cyan); font-weight: 700;
+}
+.highlight-box {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 20px 24px;
+  margin-top: 12px;
+}
+.highlight-box p { color: var(--text-sec); font-size: 0.92rem; }
+a { color: var(--cyan); text-decoration: underline; }
+footer {
+  background: var(--bg-deeper); border-top: 1px solid var(--border);
+  padding: 32px 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-logo { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--text-muted); }
+.footer-logo span { color: var(--cyan); }
+.footer-copy { font-size: 0.78rem; color: var(--text-dim); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 0.78rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Wellness<span>Total</span></a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Volver
+  </a>
+</nav>
+
+<main>
+  <div class="page-eyebrow">Legal</div>
+  <h1>Términos de Uso</h1>
+  <p class="updated">Última actualización: junio 2026</p>
+
+  <div class="doc-body">
+
+    <div class="doc-section">
+      <h2>1. Aceptación de los términos</h2>
+      <p>Al acceder a este sitio web o adquirir cualquier producto digital de Wellness Total, usted acepta estos Términos de Uso en su totalidad. Si no está de acuerdo con alguna parte, le pedimos no realizar ninguna compra.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>2. Identificación del vendedor</h2>
+      <p>Los productos digitales disponibles en este sitio son comercializados por Oscar Wellness Total, con contacto en <a href="mailto:oscar@wellnesstotal.tech">oscar@wellnesstotal.tech</a>, a través de la plataforma Hotmart.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>3. Descripción del producto</h2>
+      <p><strong>Recupera 10 horas a la semana con Claude</strong> es una guía digital en formato PDF que contiene:</p>
+      <ul>
+        <li>Flujos de trabajo paso a paso para automatizar tareas de escritura con Claude AI</li>
+        <li>Prompts listos para usar en emails, propuestas comerciales y contenido para redes</li>
+        <li>Instrucciones sin requisitos técnicos previos</li>
+      </ul>
+      <p>El producto se entrega en formato PDF digital, sin envío físico. La entrega es inmediata tras la confirmación del pago.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>4. Precio y forma de pago</h2>
+      <p>El precio publicado en la landing page es en dólares estadounidenses (USD). Hotmart convierte el precio a la moneda local del comprador de forma automática.</p>
+      <p>Los métodos de pago disponibles (tarjeta, PayPal, OXXO, Mercado Pago, etc.) son gestionados exclusivamente por Hotmart, sujetos a sus propios términos y condiciones.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>5. Política de reembolso — Garantía 15 días</h2>
+      <div class="highlight-box">
+        <p>Si dentro de los <strong>15 días calendario</strong> posteriores a su compra considera que el producto no cumplió con sus expectativas, tiene derecho a solicitar el reembolso completo sin necesidad de justificación.</p>
+        <p style="margin-top:8px;">El reembolso se gestiona directamente a través de Hotmart. Puede solicitarlo desde su cuenta Hotmart o escribiéndonos a <a href="mailto:oscar@wellnesstotal.tech">oscar@wellnesstotal.tech</a> con su número de compra.</p>
+      </div>
+      <p>Una vez procesado el reembolso, el acceso al producto quedará revocado conforme a las políticas de Hotmart.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>6. Propiedad intelectual</h2>
+      <p>Todo el contenido de este producto digital — textos, prompts, flujos, diseño y estructura — es propiedad exclusiva de Wellness Total y está protegido por las leyes de derechos de autor aplicables.</p>
+      <p>La licencia de uso es <strong>personal e intransferible</strong>. Usted puede:</p>
+      <ul>
+        <li>Usar el PDF para su propio trabajo y negocio</li>
+        <li>Imprimir una copia para uso personal</li>
+      </ul>
+      <p>Queda expresamente prohibido:</p>
+      <ul>
+        <li>Reproducir, distribuir o revender el contenido total o parcialmente</li>
+        <li>Compartir el archivo PDF con terceros</li>
+        <li>Publicar los prompts o flujos en sitios web, cursos o productos propios sin autorización escrita</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h2>7. Limitación de responsabilidad</h2>
+      <p>Los resultados descritos en este producto (ahorro de tiempo, productividad) son estimaciones basadas en casos reales y estudios citados. Los resultados individuales pueden variar según el uso, el tipo de tareas y el nivel de adopción de cada usuario.</p>
+      <p>Wellness Total no garantiza resultados específicos ni se responsabiliza por decisiones de negocio tomadas con base en el contenido del PDF.</p>
+      <p>Claude es un producto de Anthropic. Wellness Total no tiene afiliación comercial con Anthropic. Las características, precios y disponibilidad de Claude pueden cambiar sin previo aviso.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>8. Modificaciones</h2>
+      <p>Nos reservamos el derecho de actualizar estos Términos de Uso en cualquier momento. Los cambios aplican a compras realizadas después de la fecha de actualización. La versión vigente siempre estará disponible en esta página.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>9. Ley aplicable y jurisdicción</h2>
+      <p>Estos Términos se rigen por las leyes de los Estados Unidos Mexicanos. Para cualquier controversia, las partes se someten a la jurisdicción de los tribunales competentes de la Ciudad de México, renunciando a cualquier otro fuero que pudiera corresponderles por razón de sus domicilios presentes o futuros.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>10. Contacto</h2>
+      <p>Para cualquier consulta sobre estos términos o sobre su compra:</p>
+      <p><a href="mailto:oscar@wellnesstotal.tech">oscar@wellnesstotal.tech</a></p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">Wellness<span>Total</span></div>
+  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+    <div class="footer-copy">© 2026 Wellness Total</div>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacidad</a>
+      <a href="/terms.html">Términos</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

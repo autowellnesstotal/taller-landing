@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — Wellness Total</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"></noscript>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cyan:       #22D3EE;
+  --bg-dark:    #0F172A;
+  --bg-deeper:  #020617;
+  --surface:    #1E293B;
+  --border:     #334155;
+  --text:       #F1F5F9;
+  --text-sec:   #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-dim:   #475569;
+  --serif:      'Outfit', system-ui, sans-serif;
+  --sans:       'Plus Jakarta Sans', system-ui, sans-serif;
+  --mono:       'JetBrains Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg-dark);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 64px;
+  background: rgba(15,23,42,0.95);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+}
+.nav-logo span { color: var(--cyan); }
+.nav-back {
+  font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--cyan); }
+main {
+  max-width: 720px; margin: 0 auto;
+  padding: 64px 5vw 100px;
+}
+.page-eyebrow {
+  font-family: var(--mono); font-size: 0.68rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.page-eyebrow::before {
+  content: ''; width: 24px; height: 1.5px;
+  background: var(--cyan); display: inline-block; flex-shrink: 0;
+}
+h1 {
+  font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
+  color: var(--text); margin-bottom: 12px;
+}
+.updated {
+  font-size: 0.8rem; color: var(--text-dim);
+  font-family: var(--mono); margin-bottom: 48px;
+}
+.doc-body { display: flex; flex-direction: column; gap: 36px; }
+.doc-section {}
+.doc-section h2 {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 700;
+  color: var(--text); margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.doc-section p { color: var(--text-muted); margin-bottom: 10px; font-size: 0.95rem; }
+.doc-section p:last-child { margin-bottom: 0; }
+.doc-section ul {
+  list-style: none; padding: 0;
+  display: flex; flex-direction: column; gap: 6px;
+  margin-top: 8px;
+}
+.doc-section ul li {
+  color: var(--text-muted); font-size: 0.95rem;
+  padding-left: 16px; position: relative;
+}
+.doc-section ul li::before {
+  content: '·'; position: absolute; left: 0;
+  color: var(--cyan); font-weight: 700;
+}
+.highlight-box {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 20px 24px;
+  margin-top: 12px;
+}
+.highlight-box p { color: var(--text-sec); font-size: 0.92rem; }
+a { color: var(--cyan); text-decoration: underline; }
+footer {
+  background: var(--bg-deeper); border-top: 1px solid var(--border);
+  padding: 32px 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-logo { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--text-muted); }
+.footer-logo span { color: var(--cyan); }
+.footer-copy { font-size: 0.78rem; color: var(--text-dim); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 0.78rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Wellness<span>Total</span></a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Volver
+  </a>
+</nav>
+
+<main>
+  <div class="page-eyebrow">Legal</div>
+  <h1>Política de Privacidad</h1>
+  <p class="updated">Última actualización: junio 2026</p>
+
+  <div class="doc-body">
+
+    <div class="doc-section">
+      <h2>1. Responsable del tratamiento</h2>
+      <p>Oscar Wellness Total ("Wellness Total", "nosotros") es responsable del tratamiento de sus datos personales, con domicilio en México y contacto en <a href="mailto:oscar@wellnesstotal.tech">oscar@wellnesstotal.tech</a>.</p>
+      <p>Esta Política aplica al sitio web <strong>10horas.wellnesstotal.tech</strong> y a los productos digitales comercializados a través de la plataforma Hotmart.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>2. Datos personales que recabamos</h2>
+      <p>Únicamente recabamos los datos estrictamente necesarios para procesar su compra y brindar soporte:</p>
+      <ul>
+        <li>Nombre y apellidos (proporcionados al realizar la compra en Hotmart)</li>
+        <li>Correo electrónico (para entrega del producto y comunicaciones relacionadas)</li>
+        <li>Datos de pago (procesados exclusivamente por Hotmart — no los almacenamos)</li>
+        <li>Número de teléfono (solo si usted nos contacta voluntariamente vía WhatsApp)</li>
+      </ul>
+      <p>No recabamos datos sensibles (salud, biometría, origen étnico, etc.).</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>3. Finalidades del tratamiento</h2>
+      <p><strong>Finalidades necesarias:</strong></p>
+      <ul>
+        <li>Procesar y entregar el producto digital adquirido</li>
+        <li>Gestionar solicitudes de reembolso y soporte postventa</li>
+        <li>Cumplir obligaciones fiscales y legales aplicables</li>
+      </ul>
+      <p style="margin-top:12px;"><strong>Finalidades secundarias (puede oponerse):</strong></p>
+      <ul>
+        <li>Envío de información sobre nuevos productos de la colección Claude Guías</li>
+        <li>Seguimiento por WhatsApp si usted inició contacto voluntariamente</li>
+      </ul>
+      <p>Para oponerse a las finalidades secundarias, escríbanos a <a href="mailto:oscar@wellnesstotal.tech">oscar@wellnesstotal.tech</a>.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>4. Transferencia de datos a terceros</h2>
+      <p>Sus datos pueden ser compartidos con los siguientes terceros para las finalidades indicadas:</p>
+      <ul>
+        <li><strong>Hotmart:</strong> plataforma de pago y entrega del producto (tiene su propia política de privacidad)</li>
+        <li><strong>Twilio:</strong> servicio de mensajería WhatsApp para comunicaciones de soporte</li>
+        <li><strong>Meta Platforms:</strong> pixel de seguimiento para publicidad (puede desactivar en configuración de su cuenta de Facebook)</li>
+      </ul>
+      <p>No vendemos ni cedemos sus datos personales a terceros con fines comerciales propios.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>5. Cookies y tecnologías de seguimiento</h2>
+      <p>Este sitio utiliza:</p>
+      <ul>
+        <li><strong>Cookies de sesión:</strong> necesarias para el funcionamiento del checkout de Hotmart</li>
+        <li><strong>Meta Pixel:</strong> seguimiento de conversiones para optimización de publicidad</li>
+      </ul>
+      <p>Puede desactivar las cookies en la configuración de su navegador. La desactivación del Meta Pixel no afecta la funcionalidad del sitio ni la entrega de su producto.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>6. Derechos ARCO</h2>
+      <p>Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales (derechos ARCO), conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) en México.</p>
+      <div class="highlight-box">
+        <p>Para ejercer sus derechos ARCO, envíe un correo a <a href="mailto:oscar@wellnesstotal.tech">oscar@wellnesstotal.tech</a> con el asunto <strong>"Derechos ARCO"</strong>, indicando su nombre completo, correo con el que realizó la compra y el derecho que desea ejercer. Responderemos en un plazo máximo de 20 días hábiles.</p>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h2>7. Conservación de datos</h2>
+      <p>Conservamos sus datos durante el período necesario para cumplir las finalidades descritas y las obligaciones legales aplicables. Los datos asociados a transacciones se conservan por el período que exige la legislación fiscal mexicana (5 años).</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>8. Cambios a esta política</h2>
+      <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Cuando lo hagamos, revisaremos la fecha de "última actualización" al inicio de este documento. Le recomendamos revisar esta página periódicamente.</p>
+    </div>
+
+    <div class="doc-section">
+      <h2>9. Contacto</h2>
+      <p>Para cualquier consulta relacionada con esta Política, contáctenos en:</p>
+      <p><a href="mailto:oscar@wellnesstotal.tech">oscar@wellnesstotal.tech</a></p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">Wellness<span>Total</span></div>
+  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+    <div class="footer-copy">© 2026 Wellness Total</div>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacidad</a>
+      <a href="/terms.html">Términos</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
