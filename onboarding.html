@@ -135,8 +135,7 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
       <li>Copia el comando, pégalo (<code>Cmd + V</code>) y presiona Enter:</li>
     </ol>
     <div class="cmd-box">
-      <span class="cmd">echo '=== MI EQUIPO - TALLER 15 AGO ==='; sw_vers; echo '--- Procesador ---'; sysctl -n machdep.cpu.brand_string; echo '--- Memoria ---'; sysctl -n hw.memsize | awk '{printf "%.0f GB
-", $1/1073741824}'; echo '--- Disco ---'; df -h / | awk 'NR==2{print $4" libres"}'; echo '--- Claude Code ---'; claude --version 2>/dev/null || echo 'aun no instalado (paso 2)'</span>
+      <span class="cmd">echo '=== MI EQUIPO - TALLER 15 AGO ==='; sw_vers; echo '--- Procesador ---'; sysctl -n machdep.cpu.brand_string; echo '--- Memoria ---'; echo "$(($(sysctl -n hw.memsize)/1073741824)) GB"; echo '--- Disco ---'; df -h / | awk 'NR==2{print $4" libres"}'; echo '--- Claude Code ---'; claude --version 2>/dev/null || echo 'aun no instalado (paso 2)'</span>
       <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
     </div>
 
@@ -193,8 +192,7 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
       <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar (Windows)</button>
     </div>
     <div class="cmd-box">
-      <span class="cmd">echo '=== MI EQUIPO - TALLER 15 AGO ==='; sw_vers; echo '--- Procesador ---'; sysctl -n machdep.cpu.brand_string; echo '--- Memoria ---'; sysctl -n hw.memsize | awk '{printf "%.0f GB
-", $1/1073741824}'; echo '--- Disco ---'; df -h / | awk 'NR==2{print $4" libres"}'; echo '--- Claude Code ---'; claude --version 2>/dev/null || echo 'aun no instalado (paso 2)'</span>
+      <span class="cmd">echo '=== MI EQUIPO - TALLER 15 AGO ==='; sw_vers; echo '--- Procesador ---'; sysctl -n machdep.cpu.brand_string; echo '--- Memoria ---'; echo "$(($(sysctl -n hw.memsize)/1073741824)) GB"; echo '--- Disco ---'; df -h / | awk 'NR==2{print $4" libres"}'; echo '--- Claude Code ---'; claude --version 2>/dev/null || echo 'aun no instalado (paso 2)'</span>
       <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar (Mac)</button>
     </div>
     <ol>
