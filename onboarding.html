@@ -48,6 +48,19 @@ header.top p { color:var(--text-sec); max-width:600px; }
 .paso ol, .paso ul { padding-left:22px; margin:12px 0; display:grid; gap:8px; }
 .paso code { font-family:var(--mono); font-size:.88em; background:var(--bg-deeper); border:1px solid var(--border); border-radius:6px; padding:2px 8px; color:var(--cyan-soft); }
 .cmd { display:block; background:var(--bg-deeper); border:1px solid var(--border); border-radius:10px; padding:14px 16px; font-family:var(--mono); font-size:.9rem; color:var(--cyan-soft); margin:10px 0; overflow-x:auto; white-space:nowrap; }
+/* comando con boton copiar */
+.cmd-box { position:relative; margin:12px 0; }
+.cmd-box .cmd { margin:0; padding-right:130px; }
+.cmd-copy { position:absolute; top:8px; right:8px; display:inline-flex; align-items:center; gap:7px;
+  background:rgba(34,211,238,.12); border:1px solid rgba(34,211,238,.4); color:var(--cyan-soft);
+  font-family:var(--sans); font-size:.78rem; font-weight:600; padding:7px 13px; border-radius:8px;
+  cursor:pointer; transition:all .15s ease; white-space:nowrap; }
+.cmd-copy:hover { background:rgba(34,211,238,.22); }
+.cmd-copy.copiado { background:rgba(52,211,153,.16); border-color:rgba(52,211,153,.5); color:#6EE7B7; }
+@media (max-width:640px){
+  .cmd-box .cmd { padding-right:16px; padding-bottom:46px; }
+  .cmd-copy { top:auto; bottom:8px; right:8px; }
+}
 .btn-dl { display:inline-flex; align-items:center; gap:9px; background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.35); color:var(--cyan-soft); font-weight:600; font-size:.92rem; padding:12px 20px; border-radius:12px; text-decoration:none; margin:6px 10px 6px 0; }
 .btn-dl:hover { background:rgba(34,211,238,.18); }
 .btn-wa { display:inline-flex; align-items:center; gap:10px; background:var(--green-wa); color:#fff; font-weight:700; font-size:.95rem; padding:13px 22px; border-radius:12px; text-decoration:none; }
@@ -91,47 +104,71 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
 
 <main class="wrap">
 
+  <div class="nota" style="margin-bottom:26px;"><b>Antes de empezar:</b> no vas a descargar ningún programa raro ni necesitas saber de computación. Vas a <b>copiar y pegar</b> dos comandos con el botón "Copiar" que verás abajo. Nada más.</div>
+
   <div class="paso">
     <div class="num">PASO 1 DE 4</div>
     <h2>Verifica que tu equipo cumple</h2>
     <table class="req">
-      <tr><td>Sistema operativo</td><td>Windows 10/11 o macOS 12 en adelante</td></tr>
+      <tr><td>Sistema operativo</td><td>Windows 10/11 o macOS 13 (Ventura) en adelante</td></tr>
+      <tr><td>Procesador</td><td>Intel Core i5 de 6.ª generación o superior · AMD Ryzen · Apple M1 o superior</td></tr>
       <tr><td>Memoria RAM</td><td>8 GB recomendado (4 GB mínimo, va más lento)</td></tr>
       <tr><td>Espacio libre en disco</td><td>2 GB o más</td></tr>
-      <tr><td>Permisos</td><td>Poder instalar programas (tu usuario o el admin)</td></tr>
+      <tr><td>Recursos libres</td><td>CPU y memoria por debajo del 50 % de uso al arrancar</td></tr>
       <tr><td>Internet</td><td>WiFi funcional (en el taller hay red)</td></tr>
     </table>
-    <p>Descarga el verificador para tu sistema y córrelo — te dice en 10 segundos cómo está tu equipo:</p>
-    <p style="margin-top:10px;">
-      <a class="btn-dl" href="descargas/verifica.bat" download>⬇ Verificador para Windows</a>
-      <a class="btn-dl" href="descargas/verifica.command" download>⬇ Verificador para Mac</a>
-    </p>
-    <ul>
-      <li><b style="color:var(--text)">Windows:</b> doble clic en <code>verifica.bat</code>. Si Windows pregunta, elige "Ejecutar de todas formas".</li>
-      <li><b style="color:var(--text)">Mac:</b> abre la app <b>Terminal</b>, escribe <code>bash</code>, un espacio, arrastra el archivo <code>verifica.command</code> a la ventana y presiona Enter.</li>
-    </ul>
-    <div class="nota"><b>¿Tu equipo no cumple o el verificador marca algo raro?</b> Mándanos la captura por WhatsApp: la revisión y el diagnóstico son <b>gratis</b>. Si tu equipo necesita una actualización (memoria, espacio, sistema), te cotizamos la opción más económica para que llegues listo — o te prestamos equipo el día del taller (avísanos con tiempo, hay pocos).</div>
+    <p>No tienes que revisar esto a mano. Abre la terminal y pega el comando de tu sistema — te dice en 10 segundos cómo está tu equipo, punto por punto:</p>
+
+    <span class="os-tag">Windows — en PowerShell</span>
+    <ol>
+      <li>Presiona la tecla <b>Windows</b>, escribe <code>PowerShell</code> y ábrelo (el azul).</li>
+      <li>Copia el comando, pégalo en la ventana azul (clic derecho pega) y presiona Enter:</li>
+    </ol>
+    <div class="cmd-box">
+      <span class="cmd">irm https://taller.wellnesstotal.tech/verifica.ps1 | iex</span>
+      <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
+    </div>
+
+    <span class="os-tag">Mac — en Terminal</span>
+    <ol>
+      <li>Presiona <code>Cmd + Espacio</code>, escribe <b>Terminal</b> y ábrela.</li>
+      <li>Copia el comando, pégalo (<code>Cmd + V</code>) y presiona Enter:</li>
+    </ol>
+    <div class="cmd-box">
+      <span class="cmd">curl -fsSL https://taller.wellnesstotal.tech/verifica.sh | bash</span>
+      <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
+    </div>
+
+    <div class="nota"><b>¿Te salió algo en rojo o amarillo?</b> Mándanos la captura por WhatsApp: la revisión y el diagnóstico son <b>gratis</b>. Si tu equipo necesita una actualización (memoria, disco, sistema), te cotizamos la opción más económica para que llegues listo — o te prestamos equipo el día del taller (avísanos con tiempo, hay pocos).</div>
   </div>
 
   <div class="paso">
     <div class="num">PASO 2 DE 4</div>
-    <h2>Instala Node y Claude Code</h2>
-    <span class="os-tag">Windows</span>
-    <ol>
-      <li>Descarga Node.js (versión LTS) desde <a href="https://nodejs.org/es" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">nodejs.org/es</a> e instálalo con todo en "Siguiente".</li>
-      <li>Cierra y vuelve a abrir cualquier ventana negra (terminal) que tuvieras abierta.</li>
-      <li>Abre una terminal nueva: presiona <code>Windows + R</code>, escribe <code>cmd</code>, Enter.</li>
-      <li>Pega este comando y presiona Enter (tarda 1-3 minutos):</li>
-    </ol>
-    <span class="cmd">npm install -g @anthropic-ai/claude-code</span>
-    <span class="os-tag">Mac</span>
-    <ol>
-      <li>Descarga Node.js (versión LTS) desde <a href="https://nodejs.org/es" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">nodejs.org/es</a> e instálalo.</li>
-      <li>Abre la app <b>Terminal</b> (Spotlight → escribe "Terminal").</li>
-      <li>Pega este comando y presiona Enter:</li>
-    </ol>
-    <span class="cmd">npm install -g @anthropic-ai/claude-code</span>
-    <div class="nota"><b>Nota:</b> no necesitas crear cuenta ni iniciar sesión todavía. El día del taller te damos tu llave de acceso — solo necesitamos que el programa quede instalado.</div>
+    <h2>Instala Claude Code</h2>
+    <p>Un solo comando. No necesitas instalar nada más ni crear cuenta todavía.</p>
+
+    <span class="os-tag">Windows — en PowerShell</span>
+    <p>En la <b>misma ventana azul</b> del paso anterior, pega esto y presiona Enter (tarda 1-2 minutos):</p>
+    <div class="cmd-box">
+      <span class="cmd">irm https://claude.ai/install.ps1 | iex</span>
+      <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
+    </div>
+
+    <span class="os-tag">Mac — en Terminal</span>
+    <p>En la <b>misma Terminal</b> del paso anterior, pega esto y presiona Enter:</p>
+    <div class="cmd-box">
+      <span class="cmd">curl -fsSL https://claude.ai/install.sh | bash</span>
+      <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
+    </div>
+
+    <p style="margin-top:16px;">Cuando termine, <b>cierra la ventana y ábrela de nuevo</b>. Para confirmar que quedó, pega esto:</p>
+    <div class="cmd-box">
+      <span class="cmd">claude --version</span>
+      <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
+    </div>
+    <p>Si responde con un número de versión (por ejemplo <code>2.1.85</code>), quedó instalado. ✅</p>
+
+    <div class="nota"><b>No necesitas crear cuenta ni pagar nada todavía.</b> El día del taller te damos tu llave de acceso — aquí solo dejamos el programa instalado.</div>
   </div>
 
   <div class="paso">
@@ -149,9 +186,17 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
   <div class="paso">
     <div class="num">PASO 4 DE 4</div>
     <h2>Tu semáforo verde</h2>
-    <p>Vuelve a correr el verificador del paso 1. Ahora los 5 puntos deben decir <b style="color:#34D399;">OK</b> (incluidos Node y Claude Code).</p>
+    <p>Vuelve a correr el verificador del paso 1 — ahora ya con Claude Code instalado. Debe terminar con <b style="color:#34D399;">SEMÁFORO VERDE</b>.</p>
+    <div class="cmd-box">
+      <span class="cmd">irm https://taller.wellnesstotal.tech/verifica.ps1 | iex</span>
+      <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar (Windows)</button>
+    </div>
+    <div class="cmd-box">
+      <span class="cmd">curl -fsSL https://taller.wellnesstotal.tech/verifica.sh | bash</span>
+      <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar (Mac)</button>
+    </div>
     <ol>
-      <li>Tómale captura (o foto) a la ventana con todo en OK.</li>
+      <li>Tómale captura (o foto) a la ventana con el resultado.</li>
       <li>Mándala por WhatsApp — con eso quedas confirmado como 🟢 y el sábado entras directo a construir.</li>
     </ol>
     <p style="margin-top:14px;"><a class="btn-wa" href="https://wa.me/5215548407552?text=Semáforo%20del%20taller%20✅">Enviar mi captura por WhatsApp</a></p>
@@ -177,6 +222,36 @@ var CODIGO_LEGADO = 'FORJA15';
 function mostrarContenido() {
   document.getElementById('gate').style.display = 'none';
   document.getElementById('contenido').style.display = 'block';
+}
+
+// Botón "Copiar" de cada comando
+function copiarCmd(btn) {
+  var texto = btn.parentNode.querySelector('.cmd').textContent.trim();
+  var original = btn.getAttribute('data-original') || btn.textContent;
+  btn.setAttribute('data-original', original);
+  function exito() {
+    btn.textContent = '¡Copiado al portapapeles!';
+    btn.classList.add('copiado');
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.classList.remove('copiado');
+    }, 2200);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(texto).then(exito).catch(function () { fallback(texto, exito); });
+  } else {
+    fallback(texto, exito);
+  }
+}
+function fallback(texto, cb) {
+  var ta = document.createElement('textarea');
+  ta.value = texto;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); cb(); } catch (e) {}
+  document.body.removeChild(ta);
 }
 function mostrarError(msg) {
   var err = document.getElementById('err');
