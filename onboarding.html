@@ -135,7 +135,7 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
       <li>Copia el comando, pégalo (<code>Cmd + V</code>) y presiona Enter:</li>
     </ol>
     <div class="cmd-box">
-      <span class="cmd">curl -fsSL https://taller.wellnesstotal.tech/verifica.sh | bash</span>
+      <span class="cmd">bash -c "$(curl -fsSL https://taller.wellnesstotal.tech/verifica.sh)"</span>
       <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
     </div>
 
@@ -157,7 +157,7 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
     <span class="os-tag">Mac — en Terminal</span>
     <p>En la <b>misma Terminal</b> del paso anterior, pega esto y presiona Enter:</p>
     <div class="cmd-box">
-      <span class="cmd">curl -fsSL https://claude.ai/install.sh | bash</span>
+      <span class="cmd">bash -c "$(curl -fsSL https://claude.ai/install.sh)"</span>
       <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
     </div>
 
@@ -192,7 +192,7 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
       <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar (Windows)</button>
     </div>
     <div class="cmd-box">
-      <span class="cmd">curl -fsSL https://taller.wellnesstotal.tech/verifica.sh | bash</span>
+      <span class="cmd">bash -c "$(curl -fsSL https://taller.wellnesstotal.tech/verifica.sh)"</span>
       <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar (Mac)</button>
     </div>
     <ol>
