@@ -26,34 +26,34 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.15; letter-s
 #gate { position:fixed; inset:0; background:var(--bg-deeper); display:flex; align-items:center; justify-content:center; z-index:50; padding:24px; }
 .gate-box { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:44px 36px; max-width:420px; width:100%; text-align:center; }
 .gate-box h1 { font-size:1.5rem; margin:14px 0 8px; }
-.gate-box p { color:var(--text-muted); font-size:.95rem; margin-bottom:24px; }
+.gate-box p { color:var(--text-sec); font-size:1rem; margin-bottom:24px; }
 .gate-box input { width:100%; padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--bg-dark); color:var(--text); font-family:var(--mono); font-size:1.1rem; text-align:center; letter-spacing:.2em; text-transform:uppercase; outline:none; }
 .gate-box input:focus { border-color:var(--cyan); }
 .gate-box button { margin-top:14px; width:100%; padding:14px; border:none; border-radius:12px; background:var(--cyan); color:var(--bg-deeper); font-weight:700; font-size:1rem; cursor:pointer; font-family:var(--sans); }
 .gate-box button:hover { background:var(--cyan-soft); }
-.gate-err { color:#F87171; font-size:.85rem; margin-top:12px; display:none; }
-.gate-help { margin-top:20px; font-size:.8rem; color:var(--text-dim); }
+.gate-err { color:#F87171; font-size:.92rem; margin-top:12px; display:none; }
+.gate-help { margin-top:20px; font-size:.88rem; color:var(--text-muted); }
 .gate-help a { color:var(--cyan); }
 
 /* CONTENIDO */
 #contenido { display:none; }
 header.top { padding:64px 0 36px; border-bottom:1px solid var(--border); background:linear-gradient(180deg,var(--bg-deeper),var(--bg-dark)); }
 header.top h1 { font-size:clamp(1.7rem,4.5vw,2.4rem); margin-bottom:10px; }
-header.top p { color:var(--text-sec); max-width:600px; }
-.chip { display:inline-block; font-family:var(--mono); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(34,211,238,.35); border-radius:999px; padding:6px 14px; margin-bottom:16px; }
+header.top p { color:var(--text-sec); max-width:640px; font-size:1.05rem; }
+.chip { display:inline-block; font-family:var(--mono); font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(34,211,238,.35); border-radius:999px; padding:6px 14px; margin-bottom:16px; }
 .paso { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:32px 28px; margin:26px 0; }
-.paso .num { font-family:var(--mono); color:var(--cyan); font-size:.85rem; margin-bottom:10px; }
-.paso h2 { font-size:1.35rem; margin-bottom:14px; }
-.paso p, .paso li { color:var(--text-sec); font-size:.97rem; }
+.paso .num { font-family:var(--mono); color:var(--cyan); font-size:.95rem; margin-bottom:10px; }
+.paso h2 { font-size:1.45rem; margin-bottom:16px; }
+.paso p, .paso li { color:var(--text-sec); font-size:1.05rem; line-height:1.7; }
 .paso ol, .paso ul { padding-left:22px; margin:12px 0; display:grid; gap:8px; }
-.paso code { font-family:var(--mono); font-size:.88em; background:var(--bg-deeper); border:1px solid var(--border); border-radius:6px; padding:2px 8px; color:var(--cyan-soft); }
-.cmd { display:block; background:var(--bg-deeper); border:1px solid var(--border); border-radius:10px; padding:14px 16px; font-family:var(--mono); font-size:.9rem; color:var(--cyan-soft); margin:10px 0; overflow-x:auto; white-space:nowrap; }
+.paso code { font-family:var(--mono); font-size:.92em; background:var(--bg-deeper); border:1px solid var(--border); border-radius:6px; padding:2px 8px; color:var(--cyan-soft); }
+.cmd { display:block; background:var(--bg-deeper); border:1px solid var(--border); border-radius:10px; padding:15px 16px; font-family:var(--mono); font-size:.97rem; color:var(--cyan-soft); margin:10px 0; overflow-x:auto; white-space:nowrap; }
 /* comando con boton copiar */
 .cmd-box { position:relative; margin:12px 0; }
 .cmd-box .cmd { margin:0; padding-right:130px; }
 .cmd-copy { position:absolute; top:8px; right:8px; display:inline-flex; align-items:center; gap:7px;
   background:rgba(34,211,238,.12); border:1px solid rgba(34,211,238,.4); color:var(--cyan-soft);
-  font-family:var(--sans); font-size:.78rem; font-weight:600; padding:7px 13px; border-radius:8px;
+  font-family:var(--sans); font-size:.86rem; font-weight:600; padding:8px 14px; border-radius:8px;
   cursor:pointer; transition:all .15s ease; white-space:nowrap; }
 .cmd-copy:hover { background:rgba(34,211,238,.22); }
 .cmd-copy.copiado { background:rgba(52,211,153,.16); border-color:rgba(52,211,153,.5); color:#6EE7B7; }
@@ -61,16 +61,16 @@ header.top p { color:var(--text-sec); max-width:600px; }
   .cmd-box .cmd { padding-right:16px; padding-bottom:46px; }
   .cmd-copy { top:auto; bottom:8px; right:8px; }
 }
-.btn-dl { display:inline-flex; align-items:center; gap:9px; background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.35); color:var(--cyan-soft); font-weight:600; font-size:.92rem; padding:12px 20px; border-radius:12px; text-decoration:none; margin:6px 10px 6px 0; }
+.btn-dl { display:inline-flex; align-items:center; gap:9px; background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.35); color:var(--cyan-soft); font-weight:600; font-size:1rem; padding:12px 20px; border-radius:12px; text-decoration:none; margin:6px 10px 6px 0; }
 .btn-dl:hover { background:rgba(34,211,238,.18); }
-.btn-wa { display:inline-flex; align-items:center; gap:10px; background:var(--green-wa); color:#fff; font-weight:700; font-size:.95rem; padding:13px 22px; border-radius:12px; text-decoration:none; }
-.nota { background:rgba(34,211,238,.06); border:1px solid rgba(34,211,238,.2); border-radius:12px; padding:16px 18px; font-size:.9rem; color:var(--text-sec); margin-top:14px; }
+.btn-wa { display:inline-flex; align-items:center; gap:10px; background:var(--green-wa); color:#fff; font-weight:700; font-size:1.02rem; padding:13px 22px; border-radius:12px; text-decoration:none; }
+.nota { background:rgba(34,211,238,.06); border:1px solid rgba(34,211,238,.2); border-radius:12px; padding:18px 20px; font-size:1rem; line-height:1.65; color:var(--text-sec); margin-top:14px; }
 .nota b { color:var(--cyan-soft); }
-table.req { width:100%; border-collapse:collapse; margin:14px 0; font-size:.92rem; }
-table.req td { padding:9px 12px; border-bottom:1px solid var(--border); color:var(--text-sec); }
+table.req { width:100%; border-collapse:collapse; margin:14px 0; font-size:1rem; }
+table.req td { padding:11px 12px; border-bottom:1px solid var(--border); color:var(--text-sec); }
 table.req td:first-child { color:var(--text-muted); width:45%; }
-.os-tag { font-family:var(--mono); font-size:.72rem; color:var(--cyan); text-transform:uppercase; letter-spacing:.12em; display:block; margin:16px 0 6px; }
-footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48px; text-align:center; color:var(--text-dim); font-size:.8rem; }
+.os-tag { font-family:var(--mono); font-size:.84rem; color:var(--cyan); text-transform:uppercase; letter-spacing:.12em; display:block; margin:16px 0 6px; }
+footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48px; text-align:center; color:var(--text-muted); font-size:.88rem; }
 @media (max-width:640px){ .paso{padding:24px 18px;} }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,8 +139,8 @@ footer { padding:36px 0 48px; border-top:1px solid var(--border); margin-top:48p
       <button class="cmd-copy" type="button" onclick="copiarCmd(this)">Copiar</button>
     </div>
 
-    <div class="nota" style="margin-bottom:14px;"><b>Ojo con las Mac antiguas:</b> una Mac 2012-2015 con el sistema actualizado "a la fuerza" se ve moderna, pero su procesador no puede correr las herramientas del taller. La línea "Procesador" del comando te dice la verdad: si es Intel Core con número 2xxx-5xxx (por ejemplo i5-3210M), ese equipo no cumple — escríbenos y vemos opciones (préstamo de equipo).</div>
-    <div class="nota"><b>¿Te salió algo en rojo o amarillo?</b> Mándanos la captura por WhatsApp: la revisión y el diagnóstico son <b>gratis</b>. Si tu equipo necesita una actualización (memoria, disco, sistema), te cotizamos la opción más económica para que llegues listo — o te prestamos equipo el día del taller (avísanos con tiempo, hay pocos).</div>
+    <div class="nota" style="margin-bottom:14px;"><b>Ojo con las Mac antiguas:</b> una Mac 2012-2015 con el sistema actualizado "a la fuerza" se ve moderna, pero su procesador no puede correr las herramientas del taller. La línea "Procesador" del comando te dice la verdad: si es Intel Core con número 2xxx-5xxx (por ejemplo i5-3210M), ese equipo no cumple — escríbenos y vemos qué opciones tienes.</div>
+    <div class="nota"><b>¿Te salió algo en rojo o amarillo?</b> Mándanos la captura por WhatsApp: la revisión y el diagnóstico son <b>gratis</b>. Si tu equipo necesita una actualización (memoria, disco, sistema), te cotizamos la opción más económica para que llegues listo.</div>
   </div>
 
   <div class="paso">
