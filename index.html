@@ -58,7 +58,7 @@ body::after {
 }
 .wrap { max-width:1080px; margin:0 auto; padding:0 24px; position:relative; z-index:2; }
 .eyebrow {
-  font-family:var(--mono); font-size:.78rem; letter-spacing:.22em; text-transform:uppercase;
+  font-family:var(--mono); font-size:.86rem; letter-spacing:.2em; text-transform:uppercase;
   color:var(--cyan); display:inline-block; padding-left:40px; position:relative; margin-bottom:20px;
 }
 .eyebrow::before { content:""; position:absolute; left:0; top:50%; width:28px; height:2px; background:var(--cyan); }
@@ -78,10 +78,10 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
 .hero h1 .grad { background:linear-gradient(120deg,var(--cyan),var(--cyan-soft)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
 .hero-sub { font-size:clamp(1.05rem,2.4vw,1.3rem); color:var(--text-sec); max-width:600px; margin-bottom:34px; }
 .hero-meta { display:flex; flex-wrap:wrap; gap:14px 26px; margin-bottom:38px; }
-.hero-meta .m { display:flex; align-items:center; gap:9px; font-size:.95rem; color:var(--text-sec); }
+.hero-meta .m { display:flex; align-items:center; gap:10px; font-size:1.05rem; color:var(--text-sec); }
 .hero-meta .m svg { flex:none; }
 .hero-meta .m b { color:var(--text); font-weight:600; }
-.trust { margin-top:26px; display:flex; flex-wrap:wrap; gap:8px 22px; font-size:.82rem; color:var(--text-muted); }
+.trust { margin-top:26px; display:flex; flex-wrap:wrap; gap:10px 24px; font-size:.95rem; color:var(--text-sec); }
 .trust span { display:flex; align-items:center; gap:7px; }
 
 /* ---------- IMG BAND ---------- */
@@ -96,7 +96,7 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
   box-shadow:0 8px 28px rgba(37,211,102,.28);
 }
 .btn-wa:hover { background:var(--green-wa-d); transform:translateY(-2px); box-shadow:0 12px 34px rgba(37,211,102,.36); }
-.btn-wa small { display:block; font-weight:500; font-size:.72rem; opacity:.85; margin-top:1px; }
+.btn-wa small { display:block; font-weight:500; font-size:.82rem; opacity:.9; margin-top:2px; }
 
 /* ---------- CARDS ---------- */
 .grid { display:grid; gap:20px; }
@@ -107,9 +107,9 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
   transition:border-color .2s ease, transform .2s ease;
 }
 .card:hover { border-color:rgba(34,211,238,.4); transform:translateY(-3px); }
-.card .num { font-family:var(--mono); font-size:.85rem; color:var(--cyan); font-weight:500; margin-bottom:14px; }
+.card .num { font-family:var(--mono); font-size:.95rem; color:var(--cyan); font-weight:500; margin-bottom:14px; }
 .card h3 { font-size:1.22rem; margin-bottom:10px; }
-.card p { color:var(--text-muted); font-size:.95rem; }
+.card p { color:var(--text-sec); font-size:1rem; }
 .card .ico { width:46px; height:46px; border-radius:12px; background:rgba(34,211,238,.1);
   border:1px solid rgba(34,211,238,.25); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 
@@ -124,20 +124,20 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
 
 /* logistica */
 .logi { display:grid; grid-template-columns:120px 1fr; gap:14px 20px; align-items:baseline; }
-.logi dt { font-family:var(--mono); font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); }
-.logi dd { color:var(--text-sec); }
+.logi dt { font-family:var(--mono); font-size:.88rem; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); }
+.logi dd { color:var(--text-sec); font-size:1.02rem; }
 .logi dd b { color:var(--text); font-weight:600; }
 
 /* precio */
 .price-card { text-align:center; background:linear-gradient(160deg,var(--surface),var(--bg-deeper));
   border:1px solid rgba(34,211,238,.28); border-radius:24px; padding:48px 34px; max-width:520px; margin:0 auto; }
-.price-anchor { color:var(--text-dim); text-decoration:line-through; font-size:1.1rem; }
+.price-anchor { color:var(--text-muted); text-decoration:line-through; font-size:1.15rem; }
 .price-big { font-family:var(--serif); font-weight:900; font-size:3.4rem; color:var(--text); line-height:1; margin:6px 0 4px; }
 .price-big span { font-size:1.3rem; color:var(--text-muted); font-weight:400; }
 .price-early { display:inline-block; margin:14px 0 6px; padding:7px 16px; border-radius:999px;
   background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.3); color:var(--cyan-soft);
-  font-size:.86rem; font-weight:600; }
-.price-note { color:var(--text-muted); font-size:.9rem; margin:16px 0 26px; }
+  font-size:.95rem; font-weight:600; }
+.price-note { color:var(--text-sec); font-size:.98rem; margin:16px 0 26px; }
 .pay-buttons { display:flex; flex-direction:column; gap:12px; align-items:center; margin-bottom:8px; }
 .btn-mp {
   display:inline-flex; align-items:center; justify-content:center; gap:10px; width:100%; max-width:360px;
@@ -153,11 +153,21 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
 
 /* faq */
 details { background:var(--surface); border:1px solid var(--border); border-radius:14px; margin-bottom:12px; overflow:hidden; }
-details summary { cursor:pointer; padding:20px 24px; font-weight:600; font-size:1.02rem; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+details summary { cursor:pointer; padding:22px 24px; font-weight:600; font-size:1.08rem; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
 details summary::-webkit-details-marker { display:none; }
 details summary::after { content:"+"; font-family:var(--mono); color:var(--cyan); font-size:1.4rem; transition:transform .2s; }
 details[open] summary::after { transform:rotate(45deg); }
-details .a { padding:0 24px 22px; color:var(--text-muted); font-size:.96rem; }
+details .a { padding:0 24px 24px; color:var(--text-sec); font-size:1.02rem; line-height:1.7; }
+details .a p { color:var(--text-sec); font-size:1.02rem; }
+table.req { width:100%; border-collapse:collapse; font-size:.98rem; }
+table.req td { padding:10px 12px; border-bottom:1px solid var(--border); color:var(--text-sec); vertical-align:top; }
+table.req td:first-child { color:var(--text-muted); width:38%; }
+table.req tr:last-child td { border-bottom:none; }
+@media (max-width:640px){
+  table.req td { display:block; padding:4px 0; border-bottom:none; }
+  table.req td:first-child { width:auto; font-size:.86rem; text-transform:uppercase; letter-spacing:.06em; color:var(--cyan); padding-top:12px; }
+  table.req tr { display:block; border-bottom:1px solid var(--border); padding-bottom:10px; }
+}
 
 /* cta final */
 .cta-final { background:linear-gradient(160deg,var(--surface-2),var(--bg-deeper)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); text-align:center; }
@@ -170,9 +180,9 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 .footer-logo { font-family:var(--serif); font-weight:800; font-size:1.05rem; }
 .footer-logo span { color:var(--cyan); }
 .footer-right { text-align:right; }
-.footer-copy { font-size:.78rem; color:var(--text-dim); }
+.footer-copy { font-size:.86rem; color:var(--text-muted); }
 .footer-links { display:flex; gap:20px; margin-top:6px; justify-content:flex-end; }
-.footer-links a { font-size:.78rem; color:var(--text-dim); text-decoration:none; }
+.footer-links a { font-size:.86rem; color:var(--text-muted); text-decoration:none; }
 .footer-links a:hover { color:var(--text-muted); }
 
 .reveal { opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
@@ -310,7 +320,7 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
         <dt>Fecha</dt><dd><b>Sábado 15 de agosto de 2026</b> · 9:00 a 12:00 h</dd>
         <dt>Lugar</dt><dd><b>Av. Solidaridad Las Torres 301</b>, La Providencia, C.P. 52177, Metepec, Estado de México</dd>
         <dt>Cupo</dt><dd>Solo <b>20 lugares</b> — grupo reducido para atención personal</dd>
-        <dt>Traes</dt><dd>Tu <b>laptop</b> (Windows o Mac) y ganas de construir. Lo técnico lo resolvemos juntos en el pre-setup</dd>
+        <dt>Traes</dt><dd>Tu <b>laptop cargada</b> — Windows 10/11 o macOS 13+, con procesador Intel i5 de 6.ª generación o superior (o Apple M1+) y 8 GB de RAM. Debe poder <b>instalar programas</b>. Antes del taller verificamos tu equipo contigo (ver preguntas frecuentes)</dd>
         <dt>Formato</dt><dd>100% <b>práctico</b> — construyes tú, en tu máquina, en vivo</dd>
       </dl>
     </div>
@@ -336,12 +346,12 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
           Pagar mi lugar — $1,290
         </a>
       </div>
-      <p style="color:var(--text-muted); font-size:.82rem; margin:6px 0 14px;">Pago seguro con MercadoPago (tarjeta, transferencia o meses). Al pagar, escríbenos por WhatsApp para activar tu acceso.</p>
+      <p style="color:var(--text-sec); font-size:.92rem; margin:8px 0 16px;">Pago seguro con MercadoPago (tarjeta, transferencia o meses). Al pagar, escríbenos por WhatsApp para activar tu acceso.</p>
       <a class="btn-wa btn-wa-sec" href="https://wa.me/5215548407552?text=TALLER" id="cta-price">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.3.1.7-.1 1.3z"/></svg>
         ¿Tienes dudas? Escríbenos por WhatsApp
       </a>
-      <p style="color:var(--text-dim); font-size:.78rem; margin-top:16px;">Garantía: si al terminar no te llevas tu automatización funcionando, te devolvemos tu dinero.</p>
+      <p style="color:var(--text-muted); font-size:.88rem; margin-top:18px;">Garantía: si al terminar no te llevas tu automatización funcionando, te devolvemos tu dinero.</p>
     </div>
   </div>
 </section>
@@ -351,7 +361,19 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
   <div class="wrap reveal">
     <h2 class="section-title" style="margin-bottom:26px;">Antes de apartar tu lugar</h2>
     <details><summary>¿Necesito saber programar?</summary><div class="a">No. Claude Code hace el trabajo pesado; tú diriges. El pre-setup deja tu compu lista y el grupo es reducido para que nadie se quede atrás. Si nunca has tocado la terminal, este taller está diseñado para ti.</div></details>
-    <details><summary>¿Qué necesito traer?</summary><div class="a">Tu laptop (Windows o Mac) cargada. Nada más. Antes del taller te guiamos para dejarla lista en una sesión de setup.</div></details>
+    <details><summary>¿Qué necesito traer? ¿Qué laptop sirve?</summary><div class="a">
+      <p style="margin-bottom:12px;">Tu laptop cargada (con su cargador) y ganas de construir. Lo importante es que tu equipo pueda <b style="color:var(--text)">instalar y ejecutar Claude Code</b>, que es la herramienta con la que vas a construir tu Operador. Estos son los requisitos:</p>
+      <table class="req" style="margin:6px 0 14px;">
+        <tr><td>Sistema operativo</td><td><b>Windows 10 (build 1809) u 11</b> · <b>macOS 13 Ventura</b> o superior</td></tr>
+        <tr><td>Procesador</td><td>Intel Core i5 <b>6.ª generación o superior</b> · AMD Ryzen · Apple M1 o superior</td></tr>
+        <tr><td>Memoria RAM</td><td>8 GB recomendado (4 GB es el mínimo y va lento)</td></tr>
+        <tr><td>Espacio libre</td><td>2 GB en disco</td></tr>
+        <tr><td>Permisos</td><td>Poder <b>instalar programas</b> (si es equipo de tu trabajo, confirma que no esté bloqueado)</td></tr>
+        <tr><td>Internet</td><td>WiFi funcional (en el taller hay red)</td></tr>
+      </table>
+      <p><b style="color:var(--cyan-soft);">No tienes que revisar esto a mano.</b> Al inscribirte te damos acceso al portal de onboarding, donde con un solo comando tu equipo se verifica solo y te dice si cumple. Si algo falta, te lo decimos con tiempo y vemos opciones — incluido préstamo de equipo el día del taller (avísanos con anticipación, hay pocos).</p>
+      <p style="margin-top:12px; color:var(--text-muted);">⚠️ Ojo con las Mac de 2012-2015: aunque tengan el sistema actualizado, su procesador no puede ejecutar las herramientas del taller. Si tienes una Mac de esos años, escríbenos antes de pagar y lo revisamos sin costo.</p>
+    </div></details>
     <details><summary>¿Y si se me traba la computadora el día del taller?</summary><div class="a">Por eso hacemos el setup ANTES. Llegas con tu semáforo en verde y hay asistentes de apoyo en sala para que nadie pierda tiempo.</div></details>
     <details><summary>¿Esto sirve para mi negocio o para vender servicios?</summary><div class="a">Para ambos. Lo que construyes lo puedes usar en tu propio negocio o entregárselo (y cobrárselo) a un cliente. Es el mismo activo.</div></details>
     <details><summary>¿Cómo aparto mi lugar y cómo pago?</summary><div class="a">Dos formas: <b>paga directo</b> con el botón de MercadoPago (tarjeta, transferencia o meses) y escríbenos por WhatsApp con tu comprobante para activar tu acceso al instante — o <b>escríbenos primero</b> con la palabra <b>TALLER</b> si tienes dudas y te acompañamos. El cupo es limitado a 20 personas.</div></details>
