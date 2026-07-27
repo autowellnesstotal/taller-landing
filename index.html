@@ -138,6 +138,18 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
   background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.3); color:var(--cyan-soft);
   font-size:.86rem; font-weight:600; }
 .price-note { color:var(--text-muted); font-size:.9rem; margin:16px 0 26px; }
+.pay-buttons { display:flex; flex-direction:column; gap:12px; align-items:center; margin-bottom:8px; }
+.btn-mp {
+  display:inline-flex; align-items:center; justify-content:center; gap:10px; width:100%; max-width:360px;
+  background:linear-gradient(120deg,var(--cyan),var(--cyan-soft)); color:var(--bg-deeper);
+  font-weight:800; font-size:1.02rem; padding:16px 26px; border-radius:14px; text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 8px 28px rgba(34,211,238,.25);
+}
+.btn-mp:hover { transform:translateY(-2px); box-shadow:0 12px 34px rgba(34,211,238,.35); }
+.btn-mp-eb { background:linear-gradient(120deg,#34D399,#6EE7B7); box-shadow:0 8px 28px rgba(52,211,153,.28); }
+.btn-mp-eb:hover { box-shadow:0 12px 34px rgba(52,211,153,.38); }
+.btn-wa-sec { background:transparent; border:1px solid var(--green-wa); box-shadow:none; font-size:.92rem; padding:13px 22px; }
+.btn-wa-sec:hover { background:rgba(37,211,102,.12); box-shadow:none; }
 
 /* faq */
 details { background:var(--surface); border:1px solid var(--border); border-radius:14px; margin-bottom:12px; overflow:hidden; }
@@ -312,11 +324,22 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
       <div><span class="price-anchor">Precio estándar $2,490</span></div>
       <div class="price-big">$1,290 <span>MXN</span></div>
       <div style="color:var(--text-muted); font-size:.9rem;">Precio fundador · primera cohorte</div>
-      <div class="price-early">Primeros 5 lugares a $990 MXN</div>
+      <div class="price-early" id="promo-pill" style="display:none;"></div>
       <p class="price-note">Incluye los 4 ebooks de la colección <b style="color:var(--text-sec)">(valor $2,200 MXN)</b> + sesión de setup guiada previa.</p>
-      <a class="btn-wa" href="https://wa.me/5215548407552?text=TALLER" id="cta-price">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.3.1.7-.1 1.3z"/></svg>
-        Aparta tu lugar por WhatsApp
+      <div class="pay-buttons">
+        <a class="btn-mp btn-mp-eb" id="btn-990" style="display:none;" href="https://mpago.li/2cd2W6V" target="_blank" rel="noopener noreferrer" data-value="990">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          Pagar mi lugar — $990 Early Bird
+        </a>
+        <a class="btn-mp" id="btn-1290" href="https://mpago.li/32aEhwC" target="_blank" rel="noopener noreferrer" data-value="1290">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          Pagar mi lugar — $1,290
+        </a>
+      </div>
+      <p style="color:var(--text-muted); font-size:.82rem; margin:6px 0 14px;">Pago seguro con MercadoPago (tarjeta, transferencia o meses). Al pagar, escríbenos por WhatsApp para activar tu acceso.</p>
+      <a class="btn-wa btn-wa-sec" href="https://wa.me/5215548407552?text=TALLER" id="cta-price">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.3.1.7-.1 1.3z"/></svg>
+        ¿Tienes dudas? Escríbenos por WhatsApp
       </a>
       <p style="color:var(--text-dim); font-size:.78rem; margin-top:16px;">Garantía: si al terminar no te llevas tu automatización funcionando, te devolvemos tu dinero.</p>
     </div>
@@ -331,7 +354,7 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
     <details><summary>¿Qué necesito traer?</summary><div class="a">Tu laptop (Windows o Mac) cargada. Nada más. Antes del taller te guiamos para dejarla lista en una sesión de setup.</div></details>
     <details><summary>¿Y si se me traba la computadora el día del taller?</summary><div class="a">Por eso hacemos el setup ANTES. Llegas con tu semáforo en verde y hay asistentes de apoyo en sala para que nadie pierda tiempo.</div></details>
     <details><summary>¿Esto sirve para mi negocio o para vender servicios?</summary><div class="a">Para ambos. Lo que construyes lo puedes usar en tu propio negocio o entregárselo (y cobrárselo) a un cliente. Es el mismo activo.</div></details>
-    <details><summary>¿Cómo aparto mi lugar y cómo pago?</summary><div class="a">Escríbenos por WhatsApp con la palabra <b>TALLER</b>. Te confirmamos disponibilidad, te apartamos y te pasamos el enlace de pago. El cupo es limitado a 20 personas.</div></details>
+    <details><summary>¿Cómo aparto mi lugar y cómo pago?</summary><div class="a">Dos formas: <b>paga directo</b> con el botón de MercadoPago (tarjeta, transferencia o meses) y escríbenos por WhatsApp con tu comprobante para activar tu acceso al instante — o <b>escríbenos primero</b> con la palabra <b>TALLER</b> si tienes dudas y te acompañamos. El cupo es limitado a 20 personas.</div></details>
     <details><summary>¿Hay garantía?</summary><div class="a">Sí. Si al terminar el taller no te llevas tu automatización funcionando, te devolvemos tu dinero. El formato garantiza que sales con un producto.</div></details>
   </div>
 </section>
@@ -368,13 +391,40 @@ const io = new IntersectionObserver((es) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Meta Pixel — Lead al clic en cualquier CTA de WhatsApp (fase de captura)
+// Meta Pixel — Lead al clic en WhatsApp; InitiateCheckout al clic en pago directo (fase de captura)
 document.addEventListener('click', function (e) {
-  var a = e.target.closest && e.target.closest('a.btn-wa');
-  if (a && typeof fbq === 'function') {
+  if (typeof fbq !== 'function' || !e.target.closest) return;
+  var mp = e.target.closest('a.btn-mp');
+  if (mp) {
+    fbq('track', 'InitiateCheckout', { content_name: 'taller-operador-ia', currency: 'MXN', value: parseInt(mp.getAttribute('data-value'), 10) || 1290 });
+    return;
+  }
+  var wa = e.target.closest('a.btn-wa');
+  if (wa) {
     fbq('track', 'Lead', { content_name: 'taller-operador-ia', currency: 'MXN', value: 1290 });
   }
 }, true);
+
+// Promo early-bird: consulta cuántos lugares de $990 quedan.
+// Fail-safe: si la API no responde, solo se ofrece $1,290 (nunca prometer de más).
+(function () {
+  fetch('/api/promo')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (!d || d.ok !== true) return;
+      var pill = document.getElementById('promo-pill');
+      var b990 = document.getElementById('btn-990');
+      if (d.restantes > 0) {
+        pill.textContent = 'Quedan ' + d.restantes + ' de 5 lugares a $990 MXN';
+        pill.style.display = 'inline-block';
+        b990.style.display = 'inline-flex';
+      } else {
+        pill.textContent = 'Los 5 lugares de $990 ya volaron — asegura el tuyo a precio fundador';
+        pill.style.display = 'inline-block';
+      }
+    })
+    .catch(function () { /* fail-safe: no mostrar $990 */ });
+})();
 </script>
 </body>
 </html>
