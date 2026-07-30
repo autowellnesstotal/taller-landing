@@ -131,6 +131,11 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
 .logi dt { font-family:var(--mono); font-size:.88rem; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); }
 .logi dd { color:var(--text-sec); font-size:1.02rem; }
 .logi dd b { color:var(--text); font-weight:600; }
+.logi dd .maplink { display:inline-flex; align-items:center; gap:7px; margin-top:9px; padding:7px 14px;
+  border:1px solid rgba(34,211,238,.35); border-radius:999px; background:rgba(34,211,238,.07);
+  color:var(--cyan); text-decoration:none; font-size:.93rem; font-weight:600; transition:.2s; }
+.logi dd .maplink:hover { background:rgba(34,211,238,.16); border-color:rgba(34,211,238,.6); }
+.logi dd .venue { display:block; margin-top:4px; color:var(--cyan-soft); font-size:.97rem; }
 
 /* precio */
 .price-card { text-align:center; background:linear-gradient(160deg,var(--surface),var(--bg-deeper));
@@ -322,7 +327,12 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
       <h2 class="section-title" style="margin-bottom:26px;">Logística</h2>
       <dl class="logi">
         <dt>Fecha</dt><dd><b>Sábado 15 de agosto de 2026</b> · 9:00 a 12:00 h</dd>
-        <dt>Lugar</dt><dd><b>Av. Solidaridad Las Torres 301</b>, La Providencia, C.P. 52177, Metepec, Estado de México</dd>
+        <dt>Lugar</dt><dd><b>Adolfo López Mateos, Manzana 008</b>, C.P. 52149, Metepec, Estado de México
+          <span class="venue">Dentro de la Academia de Baile</span>
+          <a class="maplink" href="https://maps.app.goo.gl/LUUJwL66F1DyygPWA" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Ver ubicación en Google Maps
+          </a></dd>
         <dt>Cupo</dt><dd>Solo <b>20 lugares</b> — grupo reducido para atención personal</dd>
         <dt>Traes</dt><dd>Tu <b>laptop cargada</b> — Windows 10/11 o macOS 13+, con procesador Intel i5 de 6.ª generación o superior (o Apple M1+) y 8 GB de RAM. Debe poder <b>instalar programas</b>. Antes del taller verificamos tu equipo contigo (ver preguntas frecuentes)</dd>
         <dt>Formato</dt><dd>100% <b>práctico</b> — construyes tú, en tu máquina, en vivo</dd>
@@ -389,7 +399,7 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <section class="section cta-final">
   <div class="wrap reveal">
     <h2>Sales con un producto. No con apuntes.</h2>
-    <p>Cupo limitado a 20 lugares. Los primeros 5 a $990. Aparta el tuyo antes de que se llenen.</p>
+    <p>Cupo limitado a 20 lugares. Los primeros a $990. Aparta el tuyo antes de que se llenen.</p>
     <a class="btn-wa" href="https://wa.me/5215548407552?text=TALLER" id="cta-final">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.3.1.7-.1 1.3z"/></svg>
       Aparta tu lugar por WhatsApp
@@ -431,7 +441,7 @@ document.addEventListener('click', function (e) {
   }
 }, true);
 
-// Promo early-bird: consulta cuántos lugares de $990 quedan.
+// Promo early-bird: consulta si aún quedan lugares de $990 (el tope exacto NO se publica).
 // Fail-safe: si la API no responde, solo se ofrece $1,290 (nunca prometer de más).
 (function () {
   fetch('/api/promo')
@@ -441,11 +451,13 @@ document.addEventListener('click', function (e) {
       var pill = document.getElementById('promo-pill');
       var b990 = document.getElementById('btn-990');
       if (d.restantes > 0) {
-        pill.textContent = 'Quedan ' + d.restantes + ' de 5 lugares a $990 MXN';
+        pill.textContent = d.restantes === 1
+          ? 'Queda 1 lugar a $990 MXN — precio de lanzamiento'
+          : 'Los primeros lugares a $990 MXN — precio de lanzamiento';
         pill.style.display = 'inline-block';
         b990.style.display = 'inline-flex';
       } else {
-        pill.textContent = 'Los 5 lugares de $990 ya volaron — asegura el tuyo a precio fundador';
+        pill.textContent = 'Los lugares de $990 ya volaron — asegura el tuyo a precio fundador';
         pill.style.display = 'inline-block';
       }
     })
