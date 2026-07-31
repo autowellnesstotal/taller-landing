@@ -72,12 +72,16 @@ h1,h2,h3 { font-family:var(--serif); font-weight:800; line-height:1.1; letter-sp
 .lead { color:var(--text-sec); font-size:1.08rem; max-width:640px; }
 
 /* ---------- HERO ---------- */
-.hero { position:relative; padding:120px 0 90px; overflow:hidden; }
+.hero { position:relative; padding:72px 0 90px; overflow:hidden; }
 .hero-bg { position:absolute; inset:0; z-index:0; }
 .hero-bg img { width:100%; height:100%; object-fit:cover; opacity:.28; }
 .hero-bg::after { content:""; position:absolute; inset:0;
   background:linear-gradient(180deg,rgba(15,23,42,.78) 0%,rgba(15,23,42,.92) 55%,var(--bg-dark) 100%); }
 .hero .wrap { position:relative; z-index:2; }
+/* logos: Wellness Total (organiza) + ESMMA (sede). Esquinas redondeadas por CSS. */
+.brandbar { display:flex; align-items:center; gap:16px; margin-bottom:40px; }
+.brandbar img { height:88px; width:auto; display:block; border-radius:16px;
+  box-shadow:0 8px 26px rgba(2,8,20,.5); }
 .hero h1 { font-size:clamp(2.5rem,7vw,4.2rem); font-weight:900; margin-bottom:22px; }
 .hero h1 .grad { background:linear-gradient(120deg,var(--cyan),var(--cyan-soft)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
 .hero-sub { font-size:clamp(1.05rem,2.4vw,1.3rem); color:var(--text-sec); max-width:600px; margin-bottom:34px; }
@@ -173,6 +177,8 @@ table.req td { padding:10px 12px; border-bottom:1px solid var(--border); color:v
 table.req td:first-child { color:var(--text-muted); width:38%; }
 table.req tr:last-child td { border-bottom:none; }
 @media (max-width:640px){
+  .brandbar { gap:12px; margin-bottom:32px; }
+  .brandbar img { height:66px; border-radius:12px; }
   table.req td { display:block; padding:4px 0; border-bottom:none; }
   table.req td:first-child { width:auto; font-size:.86rem; text-transform:uppercase; letter-spacing:.06em; color:var(--cyan); padding-top:12px; }
   table.req tr { display:block; border-bottom:1px solid var(--border); padding-bottom:10px; }
@@ -219,6 +225,10 @@ footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; alig
 <header class="hero">
   <div class="hero-bg"><img src="assets/hero.webp" alt=""></div>
   <div class="wrap">
+    <div class="brandbar">
+      <img src="assets/logo-wt.webp" alt="Wellness Total — Sistemas y Automatizaciones" width="215" height="220" fetchpriority="high">
+      <img src="assets/logo-esmma.webp" alt="ESMMA Bienes Raíces — sede del taller" width="323" height="220" fetchpriority="high">
+    </div>
     <h1>Construye tu <span class="grad">Operador de IA</span> en una mañana</h1>
     <p class="hero-sub">No es teoría. Traes tu laptop y te vas con tu propia automatización de IA <b>funcionando</b> — para tu negocio o para venderla como servicio.</p>
     <div class="hero-meta">
